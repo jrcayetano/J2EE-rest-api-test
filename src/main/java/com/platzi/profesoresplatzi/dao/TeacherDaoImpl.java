@@ -6,6 +6,12 @@ import com.platzi.profesoresplatzi.model.TeacherSocialMedia;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Transactional
 public class TeacherDaoImpl extends AbstractSession implements TeacherDao {
 	
 

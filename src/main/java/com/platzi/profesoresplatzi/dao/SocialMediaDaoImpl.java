@@ -2,12 +2,16 @@ package com.platzi.profesoresplatzi.dao;
 
 import java.util.List;
 
-import com.platzi.profesoresplatzi.model.Course;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import org.springframework.data.repository.CrudRepository;
 import com.platzi.profesoresplatzi.model.SocialMedia;
 import com.platzi.profesoresplatzi.model.TeacherSocialMedia;
 
-public class SocialMediaDaoImpl extends AbstractSession implements SocialMediaDao {
-
+public class SocialMediaDaoImpl extends AbstractSession  {
+/*
 	@Override
 	public void saveSocialMedia(SocialMedia socialMedia) {
 		getSession().persist(socialMedia);
@@ -71,5 +75,7 @@ public class SocialMediaDaoImpl extends AbstractSession implements SocialMediaDa
 	   
 	   return null;
 	}
+	
+	*/
 
 }

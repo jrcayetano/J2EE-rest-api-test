@@ -12,46 +12,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
+
 public class DataBaseConfiguration {
 	
-	@Bean
-	public LocalSessionFactoryBean sessionFactory() {
-		LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
-		sessionFactoryBean.setDataSource(dataSource());
-		sessionFactoryBean.setPackagesToScan("com.platzi.profesoresplatzi.model");
-		sessionFactoryBean.setHibernateProperties(hibernateProperties());
-		
-		return sessionFactoryBean;
-	}
 	
-	@Bean
-	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://172.17.0.2:3306/platzi");
-		dataSource.setUsername("root");
-		dataSource.setPassword("toor");
-		
-		return dataSource;
-	}
-	
-	public Properties hibernateProperties() {
-		Properties properties = new Properties();
-		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-		properties.put("show_sql", "true");
-		
-		return properties;
-	}
-	
-	@Bean
-	@Autowired
-	public HibernateTransactionManager transactionManager() {
-		HibernateTransactionManager hibernateTransactionManager = new HibernateTransactionManager();
-		hibernateTransactionManager.setSessionFactory(sessionFactory().getObject());
-		
-		return hibernateTransactionManager;
-		
-	}
 }

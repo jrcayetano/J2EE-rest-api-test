@@ -12,12 +12,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="social_media")
 public class SocialMedia implements Serializable{
 	
 	@Id
-	@Column(name="social_media")
+	@Column(name="id_social_media")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long idSocialMedia;
 
@@ -29,6 +31,7 @@ public class SocialMedia implements Serializable{
 	
 	@OneToMany
 	@JoinColumn(name="id_social_media")
+	@JsonIgnore
 	private Set<TeacherSocialMedia> teacherSocialMedias;
 	
 	

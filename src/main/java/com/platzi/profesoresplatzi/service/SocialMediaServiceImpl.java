@@ -55,7 +55,8 @@ public class SocialMediaServiceImpl implements SocialMediaService{
 	@Override
 	public SocialMedia findByName(String name) {
 		// TODO Auto-generated method stub
-		return null; //_socialMediaDao.findByName(name);
+		System.out.println(name);
+		return _socialMediaDao.findByName(name);
 	}
 
 	@Override
